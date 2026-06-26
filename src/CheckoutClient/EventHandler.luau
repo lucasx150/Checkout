@@ -1,6 +1,6 @@
 --!strict
 
-local Registry = require("@self/Registry")
+local Registry = require("./Registry")
 
 local eventHandlers: {[string]: (number) -> ()} = {
     RunDevProduct = function(productId: number)

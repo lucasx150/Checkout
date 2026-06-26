@@ -11,7 +11,7 @@ local Types = require("@self/Types")
 
 Shared.Client.Parent = ReplicatedStorage
 
-local function registerDescendantsIn(container: Instance, matchPattern, register)
+local function registerDescendantsIn(container: Instance, matchPattern: (string | {string})?, register: (any) -> ())
 	for _, descendant in container:GetDescendants() do
 		if descendant:IsA("ModuleScript") and (not matchPattern or MatchAny(descendant.Name, matchPattern)) then
 			register(descendant)

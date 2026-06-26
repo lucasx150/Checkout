@@ -34,3 +34,5 @@ registerContainerChildren(gamepassesFolder, function(module: ModuleScript)
 end)
 
 require("@self/EventHandler")
+
+return {}

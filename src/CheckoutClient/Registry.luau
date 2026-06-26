@@ -1,6 +1,6 @@
 --!strict
 
-local Types = require("@self/Types")
+local Types = require("./Types")
 
 local Registry = {}
 
