@@ -1,0 +1,13 @@
+{
+  "name": "checkout",
+
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "Checkout": {
+        "$path": "src"
+      }
+    }
+  }
+}
