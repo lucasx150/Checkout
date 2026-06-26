@@ -1,9 +1,10 @@
 [package]
 name = "lucasx150/checkout"
+description = "DevProduct and Gamepass grant handling"
 version = "0.1.0"
+license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
-license = "MIT"
 exclude = ["dev.project.json"]
 
 [dependencies]
