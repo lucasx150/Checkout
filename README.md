@@ -41,17 +41,19 @@ ServerScriptService
 
 A server and client module for the same item can exist independently - you don't need both. A DevProduct with only a client module and no server module is valid (e.g. cosmetic effects that don't need server state).
 
-## DevProduct Modules
+## Server modules
 
-Each DevProduct module handles one or more product ids.
+Server modules run on the server when a matching DevProduct is purchased or when a player owns a matching Gamepass.
 
-- **`Ids`** - array of DevProduct ids this module handles.
-- **`Grant`** - called from the server when a DevProduct with an id that is in Ids is purchased.
+* **`Ids`** - array of DevProduct or Gamepass ids this module handles.
+* **`Grant`** - called from the server for matching ids.
 
-Return `false` or `Enum.ProductPurchaseDecision.NotProcessedYet` to signal failure.
-If omitted, the product is treated as client-only.
+For DevProducts, return `true` or `Enum.ProductPurchaseDecision.PurchaseGranted` on success. Return `false` or `Enum.ProductPurchaseDecision.NotProcessedYet` to signal failure.
+
+If `Grant` is omitted, the product is treated as client-only.
 
 ```lua
+-- DevProduct
 local DevProduct = {}
 
 DevProduct.Ids = {01234, 56789}
@@ -63,16 +65,8 @@ end
 return DevProduct
 ```
 
-## Gamepass module
-
-Each Gamepass module handles one or more gamepass IDs.
-
-- **`Ids`** - array of Gamepass ids this module handles.
-- **`Grant`** - called from the server when a player owns a gamepass with an id that is in Ids.
-
-If omitted, the product is treated as client-only.
-
 ```lua
+-- Gamepass
 local Gamepass = {}
 
 Gamepass.Ids = {2345, 6789}
